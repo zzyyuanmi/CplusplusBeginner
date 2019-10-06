@@ -76,7 +76,7 @@ namespace CRAZYFISH{
          */
         LinkedList()
         {
-            __head = NULL;
+            __head = __current = NULL;
             __length = 0;
         };
 
