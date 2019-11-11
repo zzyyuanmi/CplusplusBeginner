@@ -26,6 +26,15 @@
  */
 #define MIN (std::numeric_limits<TYPE>::min())
 
+#define RESET "\033[0m"
+#define RC "\033[31m" /* Red */
+#define WC "\033[37m" /* White */
+#define GC "\033[32m" /* Green */
+#define YC "\033[33m" /* Yellow */
+#define BC "\033[34m" /* Blue */
+#define MC "\033[35m" /* Magenta */
+#define CC "\033[36m" /* Cyan */
+
 /**
  * The basic definition of a binary tree.
  * 
@@ -102,6 +111,7 @@ public:
     BinaryTree()
     {
 	nil = new Node;
+	nil->color = BLACK;
 	root = nil;
     };
 
@@ -256,6 +266,10 @@ public:
      * @return 0 for OK.
      */
     int insertRight(Node *_x, TYPE _val);
+
+    int RightRotate(Node *_x);
+
+    int LeftRotate(Node *_x);
 };
 
 #else
